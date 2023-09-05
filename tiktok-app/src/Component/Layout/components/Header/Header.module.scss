@@ -1,0 +1,97 @@
+// header{
+//     display: flex;
+//     align-items: center;
+//     justify-content:space-between;
+// }
+.wrapper{
+    --search-border-radius : 92px;
+    --search-height: 46px;
+    --search-height-spacer : 9px;
+    --search-btn-width: 52px;
+
+    height: var( --default-layout-header-height);
+    width: 100%;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.12);
+    // padding: 0 24px 0 16px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.inner{
+    height: 100%;
+    width: var(--default-layout-width);
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search_box{
+    position: relative;
+    width: 361px;
+    height: var(--search-height);
+    display:flex;
+    border-radius: 92px;
+    padding-left: 16px;
+    background-color: rgba(22,24,35,0.06);
+    align-items: center;
+    border: 1.5px solid transparent;
+
+    input{
+        color: var(--black);
+        flex: 1;
+        height: 100%;
+        font-size: 1.6rem;
+        padding: 12px 0;
+        background-color:transparent;
+        caret-color: var(--primary-color);
+    }
+
+    input:not(:placeholder-shown) ~ .search_btn{
+        color: rgba(22,24,35,0.75)
+    }
+
+    &:after{
+        content: " ";
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-height-spacer) * 2);
+        background:gray;
+        top: 9px;
+        width: 1px;
+        right: var(--search-btn-width);
+    }
+
+    &:focus-within {
+        border-color: gray;
+    }
+}
+.logo{
+   
+}
+
+.close_btn,
+.loading{
+    position: absolute;
+    right: calc(var(--search-btn-width) + 16px );
+    top: 50%;
+    transform: translateY(-50%);
+    color: grey;
+    font-size: 1.7rem;
+    background-color: transparent;
+}
+.search_btn{
+    width: var(--search-btn-width);
+    height: 100%;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22,24,35,0.34);
+
+    &:hover{
+        background: rgba(22,24,35,0.03);
+        cursor: pointer;
+    }
+
+    &:active{
+        background: rgba(22,24,35,0.06);
+    }
+}
