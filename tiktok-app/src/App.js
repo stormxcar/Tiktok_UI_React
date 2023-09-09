@@ -1,5 +1,3 @@
-// import Home from "~/pages/Home";
-// import Following from "~/pages/Following";
 import { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { publicRoutes } from "./routes";
